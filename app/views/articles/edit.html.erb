@@ -1,0 +1,21 @@
+<div class="container">
+
+<header>
+    <h1> <%= link_to "Wikinimous", articles_path %></h1>
+    <%= link_to 'Add new article', new_article_path, class: "button" %>
+</header>
+
+<div class="article">
+  <%= form_for(@article) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :content %>
+    <%= f.text_area :content %><br>
+    <div class="button"><%= f.submit %></div>
+  <% end %>
+</div>
+
+</div>
+<footer>
+  <p>Wikinimous - <%= Time.now.strftime("%d/%m/%Y %H:%M") %></p>
+</footer>
